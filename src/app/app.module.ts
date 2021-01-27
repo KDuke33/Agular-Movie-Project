@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchCriteriaComponent
   ],
   imports: [
     BrowserModule,
