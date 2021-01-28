@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "Ang-Movie-Project"
+  "defaultProject": "Ang-Movie-Project",
+  "cli": {
+    "analytics": "4dea206d-f9fe-4aeb-b9e4-b6d84fdea552"
+  }
 }

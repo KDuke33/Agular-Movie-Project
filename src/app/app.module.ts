@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
+import { WatchListComponent } from './watch-list/watch-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchCriteriaComponent,
-    MovieListComponent
+    MovieListComponent,
+    WatchListComponent
   ],
   imports: [
     BrowserModule,
