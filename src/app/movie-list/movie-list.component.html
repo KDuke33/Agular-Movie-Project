@@ -1,15 +1,4 @@
-<form #form="ngForm" (ngSubmit)="getMovieByTitle(form)">
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" ngModel>
-    <button>Search</button>
-</form>
 
-
-<form #formData="ngForm" (ngSubmit)="submitForm(formData)">
-    <label for="year">Year</label>
-    <input type="number" name="year" id="year" ngModel>
-    <button>Submit</button>
-</form>
 
 <div class="movies-wrapper">
     <div (click)="showInfo(i)" *ngFor="let movie of movieData; index as i" class="single-movie">

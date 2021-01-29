@@ -13,9 +13,9 @@ export class MovieServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getMovieYear(yearInput: any, rating?: any): Observable<any> {
+  getMovieYear(year: any, rating?: any): Observable<any> {
     return this.http.get(this.apiURL, {
-      params: {primary_release_year: yearInput, ["vote_average.gte"]: rating},
+      params: {api_key: this.apiKey, primary_release_year: year, ["vote_average.gte"]: rating},
     })
   }
   getMovieTitle(title: string){

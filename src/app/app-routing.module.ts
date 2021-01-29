@@ -5,8 +5,9 @@ import { SearchCriteriaComponent } from './search-criteria/search-criteria.compo
 import { WatchListComponent } from './watch-list/watch-list.component';
 
 const routes: Routes = [
+  { path: "search-criteria", component: SearchCriteriaComponent },
   { path: "movie-list", component: MovieListComponent },
-  { path: "watchlist-page", component: WatchListComponent },
+  { path: "watch-list", component: WatchListComponent },
   { path: "", redirectTo: "/search-criteria", pathMatch: "full" },
   { path: "**", component: SearchCriteriaComponent}
 ];

@@ -3,4 +3,5 @@ export interface Movie {
     description: string;
     year: number;
     rating: number;
+    genre: string;
 }
