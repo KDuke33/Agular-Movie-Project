@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { MovieServiceService } from '../service/movie-service.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -6,10 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-
-  constructor() { }
+movieData: any; 
+input: any;
+showPopup: any = 21
+  constructor(private service: MovieServiceService) { }
 
   ngOnInit(): void {
+    this.service.getMovieYear(2000, 8).subscribe((data: any) => {
+      // console.log(data.results)
+      this.movieData = data.results
+    })
+  }
+  getMovieByTitle(form: NgForm){  
+    this.service.getMovieTitle(form.value.title).subscribe((res: any) => {
+      this.movieData = res.results
+      console.log(this.movieData)
+    })
+  }
+showInfo(i: number){
+  this.showPopup = i
+}
+  submitForm(form: NgForm){
+    console.log(form)
+    this.service.getMovieYear(Number(form.value.year)).subscribe(response => {
+      this.movieData = response
+      console.log(this.movieData)
+    })
   }
 
 }

@@ -1,6 +1,6 @@
 export interface Movie {
     title: string;
+    description: string;
     year: number;
-    genre: string;
-    country: string;
+    rating: number;
 }
