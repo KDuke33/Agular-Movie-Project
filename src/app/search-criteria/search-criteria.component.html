@@ -3,7 +3,7 @@
 <form class="titleForm" #form="ngForm" (ngSubmit)="getMovieByTitle(form)">
     <label for="title">Search by Title</label>
     <input type="text" name="title" id="title" ngModel>
-    <button type="button" routerLink="/movie-list">Search</button>
+    <button type="submit">Search</button>
 </form>
 
 <h2>or filter by</h2>
@@ -19,3 +19,14 @@
     <button>Submit</button>
 <!-- </form> -->
 <!-- </div> -->
+<div class="works">movie-list works!</div>
+<div class="movies-wrapper">
+    <div (click)="showInfo(i)" *ngFor="let movie of movieData; index as i" class="single-movie">
+        <h3>{{movie.title}}</h3>
+        <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{movie.name}} poster"/>
+        <div *ngIf="showPopup === i" class="info-popup">
+            <p>{{movie.overview}}</p>
+        </div>
+
+    </div>
+</div>

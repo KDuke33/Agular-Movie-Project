@@ -10,7 +10,7 @@ import { MovieServiceService } from '../service/movie-service.service';
 export class MovieListComponent implements OnInit {
 movieData: any; 
 input: any;
-showPopup: any = 21
+// showPopup: any = 21
   constructor(private service: MovieServiceService) { }
 
   ngOnInit(): void {
@@ -22,9 +22,9 @@ showPopup: any = 21
     // }
   }
 
-showInfo(i: number){
-  this.showPopup = i
-}
+// showInfo(i: number){
+//   this.showPopup = i
+// }
   // submitForm(form: NgForm){
   //   console.log(form)
   //   this.service.getMovieYear(Number(form.value.year)).subscribe(response => {

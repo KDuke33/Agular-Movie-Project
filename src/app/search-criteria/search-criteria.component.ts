@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MovieServiceService } from '../service/movie-service.service';
 
@@ -8,8 +8,9 @@ import { MovieServiceService } from '../service/movie-service.service';
   styleUrls: ['./search-criteria.component.css']
 })
 export class SearchCriteriaComponent implements OnInit {
-  movieData: any; 
+  @Input()movieData: any; 
   input: any;
+  showPopup: any = 21
   // showPopup: any = 21
     constructor(private service: MovieServiceService) { }
   
@@ -18,6 +19,9 @@ export class SearchCriteriaComponent implements OnInit {
       //   // console.log(data.results)
       //   this.movieData = data.results
       // })
+    }
+    showInfo(i: number){
+      this.showPopup = i
     }
     
   
