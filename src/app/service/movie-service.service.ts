@@ -27,6 +27,12 @@ export class MovieServiceService {
     if(year){
       searchParams.primary_release_year = year
     }
+    if(genre){
+      searchParams.genre = genre
+    }
+    if(rating){
+      searchParams["vote_average.gte"] = rating
+    }
     return this.http.get(this.apiURL, {
       params: searchParams,
     })
