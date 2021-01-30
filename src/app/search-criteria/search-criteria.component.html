@@ -3,7 +3,7 @@
 <form class="titleForm" #form="ngForm" (ngSubmit)="getMovieByTitle(form)">
     <label for="title">Search by Title</label>
     <input type="text" name="title" id="title" ngModel>
-    <button a routerLink="/movie-list">Search</button>
+    <button type="button" routerLink="/movie-list">Search</button>
 </form>
 
 <h2>or filter by</h2>
