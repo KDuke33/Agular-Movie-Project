@@ -1,5 +1,7 @@
+import { query } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MovieServiceService } from '../service/movie-service.service';
 
 @Component({
@@ -8,36 +10,22 @@ import { MovieServiceService } from '../service/movie-service.service';
   styleUrls: ['./search-criteria.component.css']
 })
 export class SearchCriteriaComponent implements OnInit {
-  @Input()movieData: any; 
-  input: any;
-  showPopup: any = 21
-  // showPopup: any = 21
-    constructor(private service: MovieServiceService) { }
+
+    constructor(private service: MovieServiceService, private router: Router) { }
   
     ngOnInit(): void {
-      // this.service.getMovieYear(2000, 8).subscribe((data: any) => {
-      //   // console.log(data.results)
-      //   this.movieData = data.results
-      // })
     }
-    showInfo(i: number){
-      this.showPopup = i
-    }
-    
-  
-  getMovieByTitle(form: NgForm){  
-    this.service.getMovieTitle(form.value.title).subscribe((res: any) => {
-      this.movieData = res.results
-      console.log(this.movieData)
-    })
-  }
-  
+   
 
   submitForm(form: NgForm){
-    // console.log(form)
-    this.service.getMovieYear((form.value.year, form.value.genre, form.value.rating)).subscribe(response => {
-      this.movieData = response
-      console.log(this.movieData)
-    })
+    //routes to movie list component and takes the query params oject with it
+    this.router.navigate(["movie-list"], {queryParams: 
+      {title: form.value.title, 
+        year: form.value.year, 
+        // genre: form.value.genre, 
+        rating: form.value.rating
+      }});
+        console.log("something happened")
+
   }
 }

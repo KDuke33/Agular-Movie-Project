@@ -12,7 +12,7 @@ export class MovieServiceService {
   
   apiKey:string = 'fc7b8d6a3fc62e195f60b003d5b55b5a'
 
-  apiURL: string = 'https://api.themoviedb.org/3/discover/movie?api_key=fc7b8d6a3fc62e195f60b003d5b55b5a&'
+  apiURL: string = 'https://api.themoviedb.org/3/discover/movie?'
 
   constructor(private http: HttpClient) { }
 
@@ -22,9 +22,13 @@ export class MovieServiceService {
   getmovData(data:any ){
     return this.movData
   }
-  getMovieYear(year: any, rating?: any): Observable<any> {
+  getMovies(genre?: any, year?: any, rating?: any): Observable<any> {
+    let searchParams = {apiKey: this.apiKey, genre: "", primary_release_year: "", ["vote_average.gte"]: ""}
+    if(year){
+      searchParams.primary_release_year = year
+    }
     return this.http.get(this.apiURL, {
-      params: {api_key: this.apiKey, primary_release_year: year, ["vote_average.gte"]: rating},
+      params: searchParams,
     })
   }
   getMovieTitle(title: string){

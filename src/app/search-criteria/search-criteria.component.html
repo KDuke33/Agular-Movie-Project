@@ -1,14 +1,14 @@
-<div class="formContainer">
-    <h1>Find a Movie</h1>
-<form class="titleForm" #form="ngForm" (ngSubmit)="getMovieByTitle(form)">
+<div class="form-container">
+<h1>Find a Movie</h1>
+<form class="titleForm" #form="ngForm" (ngSubmit)="submitForm(form)">
     <label for="title">Search by Title</label>
     <input type="text" name="title" id="title" ngModel>
     <button type="submit">Search</button>
-</form>
+<!-- </form> -->
 
 <h2>or filter by</h2>
 
-<form class="filterForm" #formData="ngForm" (ngSubmit)="submitForm(formData)">
+<!-- <form class="filterForm" #formData="ngForm" (ngSubmit)="submitForm(formData)"> -->
     <label for="year">Year</label>
     <input type="number" name="year" id="year" ngModel>
     <label for="genre">Genre</label>
@@ -17,16 +17,5 @@
     <label for="rating">Rating</label>
     <input type="number" name="rating" id="rating" ngModel>
     <button>Submit</button>
-<!-- </form> -->
-<!-- </div> -->
-<div class="works">movie-list works!</div>
-<div class="movies-wrapper">
-    <div (click)="showInfo(i)" *ngFor="let movie of movieData; index as i" class="single-movie">
-        <h3>{{movie.title}}</h3>
-        <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{movie.name}} poster"/>
-        <div *ngIf="showPopup === i" class="info-popup">
-            <p>{{movie.overview}}</p>
-        </div>
-
-    </div>
+</form>
 </div>
