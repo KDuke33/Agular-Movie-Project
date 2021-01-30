@@ -19,6 +19,7 @@ export class SearchCriteriaComponent implements OnInit {
       //   this.movieData = data.results
       // })
     }
+    
   
   getMovieByTitle(form: NgForm){  
     this.service.getMovieTitle(form.value.title).subscribe((res: any) => {
@@ -26,6 +27,7 @@ export class SearchCriteriaComponent implements OnInit {
       console.log(this.movieData)
     })
   }
+  
 
   submitForm(form: NgForm){
     // console.log(form)
