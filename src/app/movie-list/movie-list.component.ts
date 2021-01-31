@@ -20,22 +20,23 @@ export class MovieListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((res) => {
-      if (res) {
-        if (res.title) {
-          this.service.getMovieTitle(res.title).subscribe((response: any) => {
-            this.movieData = response.results;
-            console.log(this.movieData);
-          });
+    this.route.queryParams.subscribe((params) => {
+      console.log(params);
+      if (params) {
+        if (params.title) {
+          this.service
+            .getMovieTitle(params.title)
+            .subscribe((response: any) => {
+              this.movieData = response.results;
+              console.log(this.movieData);
+            });
         } else {
-          this.service.getMovies(res).subscribe((data) => {
+          this.service.getMovies(params).subscribe((data) => {
             this.movieData = data.results;
           });
         }
       } else {
-        this.service.getPopularMovies().subscribe((data) => {
-          this.movieData = data.results;
-        });
+        //popular movies or some other hard coded data to populate before searching
       }
     });
   }

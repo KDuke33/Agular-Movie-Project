@@ -36,11 +36,7 @@ export class MovieServiceService {
       params: { api_key: this.apiKey, query: title },
     });
   }
-  getPopularMovies(): Observable<any> {
-    return this.http.get('https://api.themoviedb.org/3/movie/popular', {
-      params: { api_key: this.apiKey },
-    });
-  }
+
   getGenres() {
     return this.http.get('https://api.themoviedb.org/3/genre/movie/list', {
       params: { api_key: this.apiKey },

@@ -19,7 +19,6 @@ export class SearchCriteriaComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getGenres().subscribe((res: any) => {
-      console.log(res);
       this.genreList = res.genres;
     });
   }
@@ -33,6 +32,5 @@ export class SearchCriteriaComponent implements OnInit {
         year: form.value.year,
       },
     });
-    console.log(form);
   }
 }

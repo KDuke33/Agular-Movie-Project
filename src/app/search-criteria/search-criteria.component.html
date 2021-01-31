@@ -1,45 +1,18 @@
-<<<<<<< HEAD
-<form #form="ngForm" (ngSubmit)="submitForm(form)">
-  <label for="title">Title</label>
-  <input type="text" name="title" id="title" ngModel />
-  <label for="year">Year</label>
-  <input type="number" name="year" id="year" ngModel />
-  <label for="rating">Rating</label>
-  <input type="text" name="rating" id="rating" ngModel />
-  <label for="genre">Genre</label>
-  <select name="genre" id="genre" ngModel>
-    <option *ngFor="let genre of genreList" value="{{ genre.id }}">
-      {{ genre.name }}
-    </option>
-  </select>
-  <button>Search</button>
-</form>
-
-<!-- <form #formData="ngForm" (ngSubmit)="submitForm(formData)">
-  <label for="year">Year</label>
-  <input type="number" name="year" id="year" ngModel />
-  <button>Submit</button>
-</form> -->
-=======
 <div class="form-container">
-<h1>Find a Movie</h1>
-<form class="titleForm" #form="ngForm" (ngSubmit)="submitForm(form)">
+  <h1>Find a Movie</h1>
+  <form class="titleForm" #form="ngForm" (ngSubmit)="submitForm(form)">
     <label for="title">Search by Title</label>
-    <input type="text" name="title" id="title" ngModel>
-    <button type="submit">Search</button>
-<!-- </form> -->
+    <input type="text" name="title" id="title" ngModel />
 
-<h2>or filter by</h2>
+    <h2>or filter by</h2>
 
-<!-- <form class="filterForm" #formData="ngForm" (ngSubmit)="submitForm(formData)"> -->
     <label for="year">Year</label>
-    <input type="number" name="year" id="year" ngModel>
+    <input type="number" name="year" id="year" ngModel />
     <label for="genre">Genre</label>
     <!-- <select name="genre" id="genre" ngModel>
         <option *ngFor = "let genre of genre" value = "{{ genre.id }}" >{{genre.name}}</option> -->
     <label for="rating">Rating</label>
-    <input type="number" name="rating" id="rating" ngModel>
+    <input type="number" name="rating" id="rating" ngModel />
     <button>Submit</button>
-</form>
+  </form>
 </div>
->>>>>>> master
