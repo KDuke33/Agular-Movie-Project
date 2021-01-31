@@ -1,44 +1,46 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Movie } from '../model/movie';
 import { MovieServiceService } from '../service/movie-service.service';
 
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.css']
+  styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent implements OnInit {
-movieData: any; 
-input: any;
-showPopup: any = 21
-
-  constructor(private service: MovieServiceService, private route: ActivatedRoute) { }
+  movieData: any;
+  showPopup: any = 21;
+  favList: any[] = [];
+  constructor(
+    private service: MovieServiceService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    //pulls in queryParams object sent from search criteria
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       console.log(params);
-      if (params.title) {
-        console.log("hit title")
-        this.service.getMovieTitle(params.title).subscribe(response => {
-          console.log(response)
-          this.movieData = response.results
-        })
-      }else if(params.year | params.genre | params.rating){
-        console.log("hit other endpoint")
-        this.service.getMovies(params.genre, params.year, params.rating).subscribe(response =>{
-          this.movieData = response.results
-        })
-       }else{
-      //   //add another get method to pull whatever we want to populate by default. Either popular movies or movies rated 10. If we do popular movies, need another API
+      if (params) {
+        if (params.title) {
+          this.service
+            .getMovieTitle(params.title)
+            .subscribe((response: any) => {
+              this.movieData = response.results;
+              console.log(this.movieData);
+            });
+        } else {
+          this.service.getMovies(params).subscribe((data) => {
+            this.movieData = data.results;
+          });
+        }
+      } else {
+        //popular movies or some other hard coded data to populate before searching
       }
-    })
-    }
-  
-
-showInfo(i: number){
-  this.showPopup = i
-}
-
+    });
+  }
+  showInfo(i: number) {
+    this.showPopup = i;
+  }
 }
