@@ -32,13 +32,13 @@ export class MovieServiceService {
     });
   }
   getMovieTitle(title: string) {
-    return this.http.get('https://api.themoviedb.org/3/search/movie', {
+    return this.http.get('https://api.themoviedb.org/3/search/movie?', {
       params: { api_key: this.apiKey, query: title },
     });
   }
 
   getGenres() {
-    return this.http.get('https://api.themoviedb.org/3/genre/movie/list', {
+    return this.http.get('https://api.themoviedb.org/3/genre/movie/list?', {
       params: { api_key: this.apiKey },
     });
   }
