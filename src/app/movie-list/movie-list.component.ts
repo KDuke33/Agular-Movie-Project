@@ -21,12 +21,17 @@ export class MovieListComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((res) => {
-      // console.log(res);
-      if (res.title) {
-        this.service.getMovieTitle(res.title).subscribe((response: any) => {
-          this.movieData = response.results;
-          console.log(this.movieData);
-        });
+      if (res) {
+        if (res.title) {
+          this.service.getMovieTitle(res.title).subscribe((response: any) => {
+            this.movieData = response.results;
+            console.log(this.movieData);
+          });
+        } else {
+          this.service.getMovies(res).subscribe((data) => {
+            this.movieData = data.results;
+          });
+        }
       } else {
         this.service.getPopularMovies().subscribe((data) => {
           this.movieData = data.results;

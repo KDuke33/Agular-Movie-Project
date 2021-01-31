@@ -13,14 +13,21 @@ export class MovieServiceService {
 
   constructor(private http: HttpClient) {}
 
-  searchMovies(yearInput?: any, rating?: any, genre?: any): Observable<any> {
-    return this.http.get('https://api.themoviedb.org/3/discover/movie', {
-      params: {
-        api_key: this.apiKey,
-        primary_release_year: yearInput,
-        ['vote_average.gte']: rating,
-        genre: genre,
-      },
+  getMovies(queryParams: any): Observable<any> {
+    let parameters: any = {
+      api_key: this.apiKey,
+    };
+    if (queryParams.year) {
+      parameters.year = queryParams.year;
+    }
+    if (queryParams.rating) {
+      parameters['vote_average.gte'] = queryParams.rating;
+    }
+    if (queryParams.genre) {
+      parameters.with_genres = queryParams.genre;
+    }
+    return this.http.get('https://api.themoviedb.org/3/discover/movie?', {
+      params: parameters,
     });
   }
   getMovieTitle(title: string) {
