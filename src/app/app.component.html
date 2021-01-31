@@ -1,5 +1,19 @@
 <header>
-  <a routerLink="/movie-list">Search</a>
-  <a routerLink="/watch-list">My List</a>
+  <h1><a routerLink="/movie-list">Our Movie Project</a></h1>
+  <nav><a routerLink="/watch-list">My Watchlist</a></nav>
 </header>
-<router-outlet></router-outlet>
+<div class="body">
+  <router-outlet></router-outlet>
+</div>
+<footer></footer>
+
+<!-- <div>
+<form #yearSearch='ngForm' (ngSubmit)="getMovies(yearSearch)">
+    <label for="year">Year</label>
+    <input type="text" id="year" name="year" ngModel>
+    <button>Submit</button>
+</form>
+</div> -->
+
+<!-- <input type="text" name="something" [(ngModel)]="input">
+    <button (click)="getMovies()">Submit</button> -->

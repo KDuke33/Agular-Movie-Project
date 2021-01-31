@@ -1,0 +1,13 @@
+header {
+    background-color: #01b4e4;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: black;
+    height: 100px;
+}
+
+

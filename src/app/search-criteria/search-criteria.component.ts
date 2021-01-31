@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { query } from '@angular/animations';
 import { MovieServiceService } from '../service/movie-service.service';
 
 @Component({

@@ -1,0 +1,21 @@
+.formContainer {
+    background-color: #0d253f;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 75vh;
+    margin: auto;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #fbb03b;
+}
+
+
+.titleForm {
+    display: flex;
+    justify-content: center;
+}
