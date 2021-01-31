@@ -1,39 +1,59 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Movie } from '../model/movie';
 import { MovieServiceService } from '../service/movie-service.service';
 
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.css']
+  styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent implements OnInit {
-movieData: any; 
-input: any;
-showPopup: any = 21
-  constructor(private service: MovieServiceService) { }
+  movieData: any;
+  showPopup: any = 21;
+  favList: any[] = [];
+  constructor(
+    private service: MovieServiceService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.service.getMovieYear(2000, 8).subscribe((data: any) => {
-      // console.log(data.results)
-      this.movieData = data.results
-    })
-  }
-  getMovieByTitle(form: NgForm){  
-    this.service.getMovieTitle(form.value.title).subscribe((res: any) => {
-      this.movieData = res.results
-      console.log(this.movieData)
-    })
-  }
-showInfo(i: number){
-  this.showPopup = i
-}
-  submitForm(form: NgForm){
-    console.log(form)
-    this.service.getMovieYear(Number(form.value.year)).subscribe(response => {
-      this.movieData = response
-      console.log(this.movieData)
-    })
+    this.route.queryParams.subscribe((res) => {
+      // console.log(res);
+      if (res.title) {
+        this.service.getMovieTitle(res.title).subscribe((response: any) => {
+          this.movieData = response.results;
+          console.log(this.movieData);
+        });
+      } else {
+        this.service.getPopularMovies().subscribe((data) => {
+          this.movieData = data.results;
+        });
+      }
+    });
   }
 
+  setFav(movie: any): void | any[] {
+    let foundMovie = this.favList.find((item) => item.id === movie.id);
+    console.log('something happened');
+    if (!foundMovie) {
+      let newFav: Movie = {
+        id: movie.id,
+        title: movie.title,
+        description: movie.overview,
+        year: movie.release_date,
+        rating: movie.vote_average,
+        imagePath: movie.poster_path,
+      };
+      this.favList.push(newFav);
+      console.log('new movie');
+    } else {
+      console.log(this.favList);
+    }
+  }
+  showInfo(i: number) {
+    this.showPopup = i;
+  }
 }

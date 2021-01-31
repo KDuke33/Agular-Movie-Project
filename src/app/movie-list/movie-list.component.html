@@ -1,24 +1,15 @@
-<form #form="ngForm" (ngSubmit)="getMovieByTitle(form)">
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" ngModel>
-    <button>Search</button>
-</form>
-
-
-<form #formData="ngForm" (ngSubmit)="submitForm(formData)">
-    <label for="year">Year</label>
-    <input type="number" name="year" id="year" ngModel>
-    <button>Submit</button>
-</form>
-
+<app-search-criteria></app-search-criteria>
 <div class="movies-wrapper">
-    <div (click)="showInfo(i)" *ngFor="let movie of movieData; index as i" class="single-movie">
-        <h3>{{movie.title}}</h3>
-        <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{movie.name}} poster"/>
-        <div *ngIf="showPopup === i" class="info-popup">
-            <p>{{movie.overview}}</p>
-        </div>
-
+  <div *ngFor="let movie of movieData; index as i" class="single-movie">
+    <h3>{{ movie.title }}</h3>
+    <img
+      (click)="showInfo(i)"
+      src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+      alt="{{ movie.name }} poster"
+    />
+    <button (click)="setFav(movie)">Add to favs</button>
+    <div *ngIf="showPopup === i" class="info-popup">
+      <p>{{ movie.overview }}</p>
     </div>
+  </div>
 </div>
-
