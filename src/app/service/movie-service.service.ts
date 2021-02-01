@@ -15,7 +15,11 @@ export class MovieServiceService {
 
   apiURL: string = 'https://api.themoviedb.org/3/discover/movie?';
 
+  watchlist: any = [];
+
   constructor(private http: HttpClient) {}
+
+  
 
   getMovies(queryParams: any): Observable<any> {
     let parameters: any = {
@@ -46,7 +50,19 @@ export class MovieServiceService {
     });
   }
 
-  
+  addToWatchlist(movie: any) {
+    this.watchlist.push(movie);
+    console.log(this.watchlist);
   }
-  // ${this.apiURL}vote_average.gte=${rating}
+
+  removeWatchlist(index: any) {
+    this.watchlist.splice(index, 1);
+  }
+
+  }
+
+
+  
+  
+
 
