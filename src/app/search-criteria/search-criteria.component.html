@@ -10,10 +10,10 @@
     <label for="year">Year</label>
     <input type="number" name="year" id="year" ngModel />
     <label for="genre">Genre</label>
-    <!-- <select name="genre" id="genre" ngModel>
-        <option *ngFor = "let genre of genre" value = "{{ genre.id }}" >{{genre.name}}</option> -->
+    <select name="genre" id="genre" ngModel>
+        <option *ngFor = "let genre of genre" value = "{{ genre.id }}" >{{genre.name}}</option></select>
     <label for="rating">Rating</label>
-    <input type="number" name="rating" id="rating" ngModel />
-    <button>Submit</button>
-  </form>
+    <input type="number" name="rating" id="rating" ngModel>
+    <button>Search Movies</button>
+</form>
 </div>
