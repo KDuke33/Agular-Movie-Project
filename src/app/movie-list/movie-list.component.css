@@ -1,3 +1,18 @@
 .movies-wrapper {
     background-color: #0d253f;
 }
+
+
+img {
+    width: 200px;
+    padding: 20px;
+    
+}
+
+.add {
+    position: absolute;
+    color: #90cea1;
+    background-color: #01b4e4;
+    border-radius: 5px;
+    left: 185px;
+}
