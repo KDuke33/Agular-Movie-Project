@@ -1,21 +1,32 @@
-.formContainer {
+.form-container {
     background-color: #0d253f;
-    border-radius: 20px;
     display: flex;
     justify-content: center;
-    width: 50%;
-    height: 75vh;
+    /* width: 50%;
+    height: 75vh; */
     margin: auto;
     flex-direction: column;
     text-align: center;
 }
 
-h1, h2 {
-    color: #fbb03b;
+input, select  {
+    height: 25px;
+    border-radius: 10px;
 }
 
 
-.titleForm {
-    display: flex;
-    justify-content: center;
+button {
+    background-color: #90cea1;
+    border-radius: 20px;
+    height: 25px;
+    width: auto;
+    padding: 5px 20px;
+}
+
+label {
+ color:   #fbb03b;
+}
+
+h1, h2 {
+    color: #fbb03b;
 }
