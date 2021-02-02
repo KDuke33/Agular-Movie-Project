@@ -15,8 +15,8 @@ export class SearchCriteriaComponent implements OnInit {
     constructor(private service: MovieServiceService, private router: Router) { }
   
     ngOnInit(): void {
-      this.service.getGenres().subscribe(response => {
-        this.genre = response["genres"];
+      this.service.getGenres().subscribe((response: any) => {
+        this.genre = response["genres"];  
       });
     }
    
