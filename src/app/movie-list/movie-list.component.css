@@ -1,9 +1,14 @@
 .movies-wrapper {
-  background-color: grey;
+  background-color: #041c45;
 }
 .single-movie {
+  color: #fbb03b;
   height: 20%;
   width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 25px;
 }
 
 .popup-info {
@@ -39,14 +44,16 @@
   width: 20px;
   border-radius: 30px;
   position: absolute;
+  cursor: pointer;
 }
 
 .more-info:hover {
   box-shadow: 2px 2px 7px 5px #d4e026;
-  background-color: rgb(22, 22, 60);
+  background-color: #a05452;
   color: white;
   border: 3px dotted;
   font-weight: bolder;
+  cursor: pointer;
 }
 
 .exit:hover {
@@ -55,6 +62,7 @@
   color: white;
   border: 3px dotted;
   font-weight: bolder;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
@@ -88,6 +96,7 @@
 
   .more-info {
     margin-top: 10px;
+    color: #3c5464;
   }
 }
     /* background-color: #0d253f;
@@ -97,13 +106,44 @@
 img {
     width: 200px;
     padding: 20px;
-    
+    border-radius: 35px;
+    padding-bottom: 0px;
+    margin-bottom: -23px;
 }
 
 .add {
-    position: absolute;
-    color: #90cea1;
+    /* position: absolute; */
+    color: #444444;
     background-color: #01b4e4;
     border-radius: 5px;
-    left: 185px;
+    background-color: #08e8de;
+    cursor: pointer;
+    /* left: 185px; */
 }
+
+.more-info{
+  background-color:#08e8de;
+  border-radius: 5px;
+  margin: 0;
+  color: #444444;
+}
+
+.movies-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btnInfo{
+  margin: 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  width: 250px;
+}
+
+.add-in-popup{
+  cursor: pointer;
+}
+
+

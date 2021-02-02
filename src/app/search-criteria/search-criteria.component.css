@@ -1,5 +1,5 @@
 .form-container {
-    background-color: #0d253f;
+    background-color: #041c45;
     display: flex;
     justify-content: center;
     /* width: 50%;
@@ -16,15 +16,20 @@ input, select  {
 
 
 button {
-    background-color: #90cea1;
-    border-radius: 20px;
-    height: 25px;
+    background-color: #08e8de;
+    color: #444444;
+    border-radius: 10px;
+    height: 30px;
     width: auto;
-    padding: 5px 20px;
+    padding: 5px;
+    margin-left: 5px;
+    font-weight: bold;
 }
 
 label {
- color:   #fbb03b;
+    margin-left: 25px;
+    color:   #fbb03b;
+    margin-right: 5px;
 }
 
 h1, h2 {
