@@ -18,18 +18,21 @@
     <div class="popup-container" *ngIf="showInfo==i">
       <div class="popup">
 
-        <div>
-          <button class="add-in-popup" (click)="toggleWatch(movie)" [ngClass]="{ watch: checkWatch(movie) }">Add to Watchlist</button>
-
-        <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster"
-          class="popup-image" />
-        <div class="popup-info">
-          <p class="title">{{ movie.title }} </p>
-          <p class="release_date"> Release Date: {{ movie.release_date }} </p>
-          <p class="movie_overview">{{ movie.overview }}</p>
+        <div class="imgInfo">
+          <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster"
+            class="popup-image" />
+          <div class="popup-info">
+            <p class="title">{{ movie.title }} </p>
+            <p class="release_date"> Release Date: {{ movie.release_date }} </p>
+            <p class="movie_overview">{{ movie.overview }}</p>
+          </div>
         </div>
-
-        <button class="exit" (click)="removeShowInfo()">Exit</button>
+        
+        <div class="infoBtn">
+          <button class="add-in-popup" (click)="toggleWatch(movie)" [ngClass]="{ watch: checkWatch(movie) }">Add to Watchlist</button>
+          <button class="exit" (click)="removeShowInfo()">Exit</button>
+        </div>
+        
 
       </div>
     </div>

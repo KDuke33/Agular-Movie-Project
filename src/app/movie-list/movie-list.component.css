@@ -36,7 +36,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 5px dotted white;
+  border: 5px solid #08e8de;
 }
 
 .add-movie {
@@ -49,17 +49,17 @@
 
 .more-info:hover {
   box-shadow: 2px 2px 7px 5px #d4e026;
-  background-color: #a05452;
-  color: white;
+  background-color: #444444;
+  color: #08e8de;
   border: 3px dotted;
   font-weight: bolder;
   cursor: pointer;
 }
 
-.exit:hover {
+.exit:hover, .add:hover, .add-in-popup:hover {
   box-shadow: 2px 2px 7px 5px #d4e026;
-  background-color: rgb(22, 22, 60);
-  color: white;
+  background-color: #444444;
+  color: #08e8de;
   border: 3px dotted;
   font-weight: bolder;
   cursor: pointer;
@@ -72,27 +72,36 @@
     padding-top: 25px;
     justify-content: space-around;
   }
+  .exit{
+    color: #444444;
+    background-color: #01b4e4;
+    border-radius: 5px;
+    background-color: #08e8de;
+    cursor: pointer;
+  }
 
-  /* .add-in-popup {
-
-
-  } */
+  .add-in-popup {
+    color: #444444;
+    background-color: #01b4e4;
+    border-radius: 5px;
+    background-color: #08e8de;
+    cursor: pointer;
+  }
   
   .popup {
-    background-color: blue;
+    background-color: #041c45;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 500px;
     height: 500px;
-    border: 5px dotted white;
+    border: 5px solid #08e8de;
+    padding: 10px;
+    border-radius: 25px;
+    justify-content: space-around;
   }
 
-  .popup-image {
-    height: 300px;
-    width: 250px;
-  }
 
   .more-info {
     margin-top: 10px;
@@ -131,6 +140,7 @@ img {
 .movies-wrapper{
   display: flex;
   flex-wrap: wrap;
+  margin-top: 0;
 }
 
 .btnInfo{
@@ -144,6 +154,21 @@ img {
 
 .add-in-popup{
   cursor: pointer;
+}
+
+.imgInfo{
+  display:flex;
+  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoBtn{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 450px;
 }
 
 
