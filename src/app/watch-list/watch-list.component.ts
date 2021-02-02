@@ -1,10 +1,11 @@
 import { MovieServiceService } from './../service/movie-service.service';
 import { Component, OnInit } from '@angular/core';
+import { MovieServiceService } from 'Agular-Movie-Project/src/app/service/movie-service.service';
 
 @Component({
   selector: 'app-watch-list',
   templateUrl: './watch-list.component.html',
-  styleUrls: ['./watch-list.component.css']
+  styleUrls: ['./watch-list.component.css'],
 })
 export class WatchListComponent implements OnInit {
   watch: any[] = [];
@@ -25,4 +26,8 @@ export class WatchListComponent implements OnInit {
     this.service.setIds(this.watchIds);
   }
 
+  // removeFromWatchlist(index: any) {
+  //   this.service.removeWatchlist(index);
+  //   this.movieData.splice(index, 1);
+  // }
 }

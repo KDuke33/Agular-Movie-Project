@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../model/movie';
@@ -13,11 +13,17 @@ export class MovieListComponent implements OnInit {
   movieData: any;
   showPopup: any = 21;
   favList: any[] = [];
+
+  @Input() data: any;
+  
+  // lets the parent know about the event
+  @Output() added = new EventEmitter<any>();
+  showInfo: any;
+
   watch: any[] = [];
   watchIds: any[] = [];
   constructor(
     private service: MovieServiceService,
-    private router: Router,
     private route: ActivatedRoute
   ) {}
 
@@ -45,8 +51,20 @@ export class MovieListComponent implements OnInit {
       this.watch = this.service.getWatch();
     });
   }
-  showInfo(i: number) {
-    this.showPopup = i;
+
+  addToWatchlist(movie: any) {
+    this.service.addToWatchlist(movie);
+    movie.isClicked = true;
+
+    this.added.emit(movie);
+  }
+
+  ShowInfo(index: any) {
+    this.showInfo = index;
+  }
+
+  removeShowInfo() {
+    this.showInfo = null;
   }
   toggleWatch(watch: any) {
     if (this.watchIds.includes(watch.id)) {
