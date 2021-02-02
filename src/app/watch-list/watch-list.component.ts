@@ -10,6 +10,7 @@ import { MovieServiceService } from 'Agular-Movie-Project/src/app/service/movie-
 export class WatchListComponent implements OnInit {
   watch: any[] = [];
   watchIds: number[] = [];
+  showInfo: any;
 
   constructor(private service: MovieServiceService) { }
 
@@ -24,6 +25,14 @@ export class WatchListComponent implements OnInit {
     this.watchIds.splice(index, 1);
     this.service.setWatch(this.watch);
     this.service.setIds(this.watchIds);
+  }
+
+  ShowInfo(index: any) {
+    this.showInfo = index;
+  }
+
+  removeShowInfo() {
+    this.showInfo = null;
   }
 
   // removeFromWatchlist(index: any) {
