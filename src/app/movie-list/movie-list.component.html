@@ -17,11 +17,10 @@
       <div class="popup">
 
         <div>
-          <button class="add-movie" (click)="addToWatchlist(i)"></button>
+          <button class="add-in-popup" (click)="toggleWatch(movie)" [ngClass]="{ watch: checkWatch(movie) }">Add to Wathlist</button>
 
         <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster"
           class="popup-image" />
-
         <div class="popup-info">
           <p class="release_date"> Release Date: {{ movie.release_date }} </p>
           <p class="movie_overview">{{ movie.overview }}</p>
