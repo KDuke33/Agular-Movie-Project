@@ -32,7 +32,6 @@ export class SearchCriteriaComponent implements OnInit {
         genre: form.value.genre, 
         rating: form.value.rating
       }});
-        console.log("something happened");
 
   }
   

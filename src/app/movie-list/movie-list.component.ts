@@ -20,6 +20,8 @@ export class MovieListComponent implements OnInit {
   @Output() added = new EventEmitter<any>();
   showInfo: any;
 
+  watch: any[] = [];
+  watchIds: any[] = [];
   constructor(
     private service: MovieServiceService,
     private route: ActivatedRoute
@@ -44,6 +46,9 @@ export class MovieListComponent implements OnInit {
       } else {
         //popular movies or some other hard coded data to populate before searching
       }
+
+      this.watchIds = this.service.getIds();
+      this.watch = this.service.getWatch();
     });
   }
 
@@ -61,4 +66,26 @@ export class MovieListComponent implements OnInit {
   removeShowInfo() {
     this.showInfo = null;
   }
-}
+  toggleWatch(watch: any) {
+    if (this.watchIds.includes(watch.id)) {
+      let index = this.watchIds.findIndex(add => {
+        return add === watch.id;
+      });
+      this.watchIds.splice(index, 1);
+      this.watch.splice(index, 1);
+      this.service.setWatch(this.watch);
+      this.service.setIds(this.watchIds);
+    } else {
+      this.watchIds.push(watch.id);
+      this.watch.push(watch);
+      this.service.setWatch(this.watch);
+      this.service.setIds(this.watchIds);
+    }
+  }
+  checkWatch(movie: any) {
+    return this.watchIds.includes(movie.id);
+  }
+
+  }
+
+

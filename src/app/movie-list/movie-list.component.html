@@ -5,6 +5,7 @@
     class="single-movie" >
 
     <h3>{{ movie.title }}</h3>
+    <button class="add" (click)="toggleWatch(movie)"><i class="fas fa-plus" [ngClass]="{ watch: checkWatch(movie) }"></i></button>
     <img
       src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
       alt="{{ movie.name }} " />

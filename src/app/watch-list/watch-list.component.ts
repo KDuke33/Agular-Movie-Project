@@ -1,3 +1,4 @@
+import { MovieServiceService } from './../service/movie-service.service';
 import { Component, OnInit } from '@angular/core';
 import { MovieServiceService } from 'Agular-Movie-Project/src/app/service/movie-service.service';
 
@@ -7,16 +8,26 @@ import { MovieServiceService } from 'Agular-Movie-Project/src/app/service/movie-
   styleUrls: ['./watch-list.component.css'],
 })
 export class WatchListComponent implements OnInit {
-  movieData: any = [];
+  watch: any[] = [];
+  watchIds: number[] = [];
 
-  constructor(private service: MovieServiceService) {}
+  constructor(private service: MovieServiceService) { }
 
   ngOnInit(): void {
-    this.movieData = this.service.getWatchlist();
+
+    this.watch = this.service.getWatch();
+    this.watchIds = this.service.getIds();
   }
 
-  removeFromWatchlist(index: any) {
-    this.service.removeWatchlist(index);
-    this.movieData.splice(index, 1);
+  removeWatch(index: number) {
+    this.watch.splice(index, 1);
+    this.watchIds.splice(index, 1);
+    this.service.setWatch(this.watch);
+    this.service.setIds(this.watchIds);
   }
+
+  // removeFromWatchlist(index: any) {
+  //   this.service.removeWatchlist(index);
+  //   this.movieData.splice(index, 1);
+  // }
 }

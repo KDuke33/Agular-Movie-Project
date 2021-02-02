@@ -1,4 +1,4 @@
-<div class="movies-container">
+<!-- <div class="movies-container">
   <div *ngFor="let movie of movieData; index as i" class="movie-content">
     
     <div class="remove-button">
@@ -11,6 +11,19 @@
 
     <p>{{ movie.original_title }}</p>
 
-    <p>{{ movie.release_date }}</p>
+    <p>{{ movie.release_date }}</p> -->
+
+<div class="container">
+  <h1>My Movie Watchlist</h1>
+  <p class="nothing" *ngIf="watch.length === 0">Looks like you don't have anything on your watchlist!</p>
+  <div class="watchlist" *ngFor="let movie of watch; index as i">
+    <h1>{{ movie.title }}</h1>
+    <img
+    src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+    alt="{{ movie.name }} poster"
+    />
+    <button class="trash" (click)="removeWatch(i)">
+      <i class="fas fa-trash-alt"></i>
+    </button>
   </div>
 </div>

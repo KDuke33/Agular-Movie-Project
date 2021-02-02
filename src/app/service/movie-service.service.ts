@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class MovieServiceService {
   movData: any;
-
+  watch: any[] = [];
+  watchIdList: any[] = [];
   dataGenres = [];
   
   apiKey:string = 'fc7b8d6a3fc62e195f60b003d5b55b5a'
@@ -54,12 +55,32 @@ export class MovieServiceService {
     this.watchlist.push(movie);
     console.log(this.watchlist);
   }
+  
+  getWatch() {
+    return this.watch;
+  }
+
+  setWatch (watch: any[]) {
+    this.watch = watch;
+  }
+
+  getIds() {
+    return this.watchIdList;
+  }
+
+  setIds(ids: any[]) {
+    this.watchIdList = ids;
+  }
+
+   
+  
+  
 
   removeWatchlist(index: any) {
     this.watchlist.splice(index, 1);
   }
-
-  }
+}
+  
 
 
   
