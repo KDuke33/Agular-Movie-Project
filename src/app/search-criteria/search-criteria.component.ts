@@ -12,6 +12,9 @@ import { MovieServiceService } from '../service/movie-service.service';
 export class SearchCriteriaComponent implements OnInit {
   genre: any;
 
+  data: any = [];
+  watchlist: any = [];
+
     constructor(private service: MovieServiceService, private router: Router) { }
   
     ngOnInit(): void {
@@ -31,4 +34,5 @@ export class SearchCriteriaComponent implements OnInit {
       }});
 
   }
+  
 }

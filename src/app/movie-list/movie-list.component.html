@@ -1,20 +1,40 @@
 <app-search-criteria></app-search-criteria>
 <div class="movies-wrapper">
   <div
-    (click)="showInfo(i)"
     *ngFor="let movie of movieData; index as i"
-    class="single-movie"
-  >
-  
+    class="single-movie" >
+
     <h3>{{ movie.title }}</h3>
     <button class="add" (click)="toggleWatch(movie)"><i class="fas fa-plus" [ngClass]="{ watch: checkWatch(movie) }"></i></button>
     <img
       src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
-      alt="{{ movie.name }} poster"
-    />
-    
-    <div *ngIf="showPopup === i" class="info-popup">
-      <p>{{ movie.overview }}</p>
+      alt="{{ movie.name }} " />
+
+    <button class="more-info" (click)="ShowInfo(i)">More Info</button>
+
+
+    <div class="popup-container" *ngIf="showInfo==i">
+      <div class="popup">
+
+        <div>
+          <button class="add-movie" (click)="addToWatchlist(i)"></button>
+
+        <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster"
+          class="popup-image" />
+
+        <div class="popup-info">
+          <p class="release_date"> Release Date: {{ movie.release_date }} </p>
+          <p class="movie_overview">{{ movie.overview }}</p>
+        </div>
+
+        <button class="exit" (click)="removeShowInfo()">EXIT</button>
+
+      </div>
     </div>
+
   </div>
 </div>
+
+
+
+    
