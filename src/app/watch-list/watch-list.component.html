@@ -22,6 +22,23 @@
     src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
     alt="{{ movie.name }} poster"
     />
+
+    <button class="more-info" (click)="ShowInfo(i)">More Info</button>
+
+
+    <div class="popup-container" *ngIf="showInfo==i">
+      <div class="popup">
+
+        <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster"
+        class="popup-image" />
+
+        <div class="popup-info">
+          <p class="release_date"> Release Date: {{ movie.release_date }} </p>
+          <p class="movie_overview">{{ movie.overview }}</p>
+        </div>
+
+        <button class="exit" (click)="removeShowInfo()">EXIT</button>
+
     <button class="trash" (click)="removeWatch(i)">
       <i class="fas fa-trash-alt"></i>
     </button>
