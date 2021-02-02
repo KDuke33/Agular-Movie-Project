@@ -65,10 +65,11 @@
     justify-content: space-around;
   }
 
-  /* .single-movie{
-    
-   } */
+  /* .add-in-popup {
 
+
+  } */
+  
   .popup {
     background-color: blue;
     display: flex;

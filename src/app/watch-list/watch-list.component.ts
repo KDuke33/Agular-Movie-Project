@@ -1,6 +1,5 @@
 import { MovieServiceService } from './../service/movie-service.service';
 import { Component, OnInit } from '@angular/core';
-import { MovieServiceService } from 'Agular-Movie-Project/src/app/service/movie-service.service';
 
 @Component({
   selector: 'app-watch-list',
