@@ -15,14 +15,15 @@ footer {
     color: white;
     font-family: 'Montserrat', sans-serif; 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 15px;
     margin-top: 10px;
     flex-shrink: 0;
+    font-size: 12px;
 }
 
 .tmdb {
-    width: 150px;
+    width: 75px;
 }
 
 .tmdb-logo {
@@ -60,6 +61,24 @@ a {
 
 .myWatchList {
     color: #3813e5;
+}
+
+@media only screen and (min-width: 768px) {
+    footer {
+        background-color: black;
+        height: 75px;
+        color: white;
+        font-family: 'Montserrat', sans-serif; 
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        margin-top: 10px;
+        flex-shrink: 0;
+    }
+
+    .tmdb {
+        width: 150px;
+    }
 }
 
 
