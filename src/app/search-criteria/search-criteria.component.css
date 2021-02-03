@@ -24,8 +24,8 @@ input, select  {
 
 
 button {
-    background-color: #08e8de;
-    color: #444444;
+    background-color:#08e8de ;
+    color: #3813e5;
     border-radius: 10px;
     height: 30px;
     width: auto;
@@ -34,14 +34,17 @@ button {
     font-weight: bold;
     border: 1px;
     font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    border: 3px dotted;
+    box-shadow: 1px 1px 5px 5px #00a5ff;
 }
 
 label {
     margin-left: 25px;
-    color:   #444444;
+    color: #3813e5;
     margin-right: 5px;
     font-family: 'Montserrat', sans-serif;
-    
+    text-shadow: 0 0 3px #08e8de, 0 0 6px #08e8de;
 }
 
 h1, h2 {
@@ -81,4 +84,5 @@ h1, h2 {
         display: flex;
         padding-left: 35px;
     }
+    
 }

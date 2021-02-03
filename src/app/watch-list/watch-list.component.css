@@ -51,12 +51,14 @@ img {
     font-family: 'Bangers', cursive;
     text-align: center;
     letter-spacing: 4px;
+    /* text-shadow: 0 0 3px #08e8de, 0 0 6px #08e8de; */
 }
 
 .nothing {
     color: #D01698;
     font-family: 'Montserrat', sans-serif; 
     text-align: center;
+    /* text-shadow: 0 0 3px #08e8de, 0 0 6px #08e8de; */
 }
 
 button {
