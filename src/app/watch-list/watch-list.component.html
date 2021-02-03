@@ -1,46 +1,53 @@
-<!-- <div class="movies-container">
-  <div *ngFor="let movie of movieData; index as i" class="movie-content">
-    
-    <div class="remove-button">
-      <button class="remove-movie" (click)="removeFromWatchlist(i)"></button>
-
-      <img
-        src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
-        alt="movie poster" />
-    </div>
-
-    <p>{{ movie.original_title }}</p>
-
-    <p>{{ movie.release_date }}</p> -->
-
+<h1 class="page-header">My Movie Watchlist</h1>
+<p class="nothing" *ngIf="watch.length === 0">
+  Looks like you don't have anything on your watchlist!
+</p>
 <div class="container">
-  <h1>My Movie Watchlist</h1>
-  <p class="nothing" *ngIf="watch.length === 0">Looks like you don't have anything on your watchlist!</p>
   <div class="watchlist" *ngFor="let movie of watch; index as i">
-    <h1>{{ movie.title }}</h1>
     <img
-    src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
-    alt="{{ movie.name }} poster"
+      *ngIf="movie.poster_path"
+      src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+      alt="{{ movie.name }} poster"
     />
-
+    <img
+      *ngIf="!movie.poster_path"
+      src="https://www.dropbox.com/s/obwo2zwyblcadup/movie_film_transparent.png?raw=1"
+      alt="{{ movie.name }}"
+    />
+<div class="btnInfo">
     <button class="more-info" (click)="ShowInfo(i)">More Info</button>
-
-
-    <div class="popup-container" *ngIf="showInfo==i">
-      <div class="popup">
-
-        <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster"
-        class="popup-image" />
-
-        <div class="popup-info">
-          <p class="release_date"> Release Date: {{ movie.release_date }} </p>
-          <p class="movie_overview">{{ movie.overview }}</p>
-        </div>
-
-        <button class="exit" (click)="removeShowInfo()">EXIT</button>
-
     <button class="trash" (click)="removeWatch(i)">
       <i class="fas fa-trash-alt"></i>
     </button>
+  </div>
+    <div class="popup-container" *ngIf="showInfo == i">
+      <div class="popup">
+        <div class="imgInfo">
+          <img
+            *ngIf="movie.poster_path"
+            src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+            alt="movie poster"
+            class="popup-image"
+          />
+          <img
+            *ngIf="!movie.poster_path"
+            src="https://www.dropbox.com/s/obwo2zwyblcadup/movie_film_transparent.png?raw=1"
+            alt="{{ movie.name }}"
+          />
+          <div class="popup-info">
+            <h2 class="title">{{ movie.title }}</h2>
+            <p class="release_date">Release Date: {{ movie.release_date }}</p>
+            <p class="movie_overview">{{ movie.overview }}</p>
+          </div>
+        </div>
+
+        <div class="infoBtn">
+          <button class="exit" (click)="removeShowInfo()">Exit</button>
+          <button class="trash" (click)="removeWatch(i)">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

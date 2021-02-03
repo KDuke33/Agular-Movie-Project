@@ -1,26 +1,22 @@
-<header>
-    <h1><a routerLink="/movie-list">Super Interesting and Unique Name</a></h1>
-    <nav><a routerLink="/watch-list">My Watchlist</a> </nav>
+<div class="content"><header>
+    <h1><a class="logo" routerLink="/movie-list">Super Interesting and Unique Name</a></h1>
+    <nav><a routerLink="/watch-list">My Watchlist</a> 
+        <i class="far fa-user-circle"></i>
+    </nav>
 </header>
 <div class="body">
     <router-outlet></router-outlet>
 </div>
+</div>
 <footer>
+    <div class="tmdb-logo">
     <div>Data provided by</div>
     <img class="tmdb" src="https://www.dropbox.com/s/mp4cr1iph31qbf6/movieDB_logo_long_transparent.png?raw=1" alt="The Movie Database">
+    </div>
+    <div>
+        <p>This app was created by</p>
+        <p>Kenny Duke, Q. Elder, Carly Ginzinger & Amy Spencer</p>
+    </div>
+    
 </footer>
 
-
-
-
-<!-- <div>
-<form #yearSearch='ngForm' (ngSubmit)="getMovies(yearSearch)">
-    <label for="year">Year</label>
-    <input type="text" id="year" name="year" ngModel>
-    <button>Submit</button>
-</form>
-</div> -->
-
-
-    <!-- <input type="text" name="something" [(ngModel)]="input">
-    <button (click)="getMovies()">Submit</button> -->

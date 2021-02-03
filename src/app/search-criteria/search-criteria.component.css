@@ -24,16 +24,21 @@ button {
     padding: 5px;
     margin-left: 5px;
     font-weight: bold;
+    border: 1px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 label {
     margin-left: 25px;
-    color:   #fbb03b;
+    color:   #8A8A8A;
     margin-right: 5px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1, h2 {
-    color: #fbb03b;
+    color: #D01698;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 4px;
 }
 
 

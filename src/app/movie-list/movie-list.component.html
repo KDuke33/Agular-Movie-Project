@@ -1,45 +1,56 @@
 <app-search-criteria></app-search-criteria>
 <div class="movies-wrapper">
-  <div
-    *ngFor="let movie of movieData; index as i"
-    class="single-movie" >
-
-    <!-- <h3>{{ movie.title }}</h3> -->
-    <img class="movie-poster"
+  <div *ngFor="let movie of movieData; index as i" class="single-movie">
+    <img
+      *ngIf="movie.poster_path"
+      class="movie-poster"
       src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
-      alt="{{ movie.name }} " />
+      alt="{{ movie.name }}"
+    />
+
+    <img
+      *ngIf="!movie.poster_path"
+      src="https://www.dropbox.com/s/obwo2zwyblcadup/movie_film_transparent.png?raw=1"
+      alt="{{ movie.name }}"
+    />
     <div class="btnInfo">
-    <button class="more-info" (click)="ShowInfo(i)">More Info</button>
-    <button class="add" (click)="toggleWatch(movie)"><i class="fas fa-plus" [ngClass]="{ watch: checkWatch(movie) }"></i></button> 
+      <button class="more-info" (click)="ShowInfo(i)">More Info</button>
+      <button class="add" (click)="toggleWatch(movie)">
+        <i class="fas fa-plus" [ngClass]="{ watch: checkWatch(movie) }"></i>
+      </button>
     </div>
-    
-
-
-    <div class="popup-container" *ngIf="showInfo==i">
+    <div class="popup-container" *ngIf="showInfo == i">
       <div class="popup">
-
         <div class="imgInfo">
-          <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster"
-            class="popup-image" />
+          <img
+            *ngIf="movie.poster_path"
+            src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+            alt="movie poster"
+            class="popup-image"
+          />
+          <img
+            *ngIf="!movie.poster_path"
+            src="https://www.dropbox.com/s/obwo2zwyblcadup/movie_film_transparent.png?raw=1"
+            alt="{{ movie.name }}"
+          />
           <div class="popup-info">
-            <p class="title">{{ movie.title }} </p>
-            <p class="release_date"> Release Date: {{ movie.release_date }} </p>
+            <h2 class="title">{{ movie.title }}</h2>
+            <p class="release_date">Release Date: {{ movie.release_date }}</p>
             <p class="movie_overview">{{ movie.overview }}</p>
           </div>
         </div>
-        
+
         <div class="infoBtn">
-          <button class="add-in-popup" (click)="toggleWatch(movie)" [ngClass]="{ watch: checkWatch(movie) }">Add to Watchlist</button>
+          <button
+            class="add-in-popup"
+            (click)="toggleWatch(movie)"
+            [ngClass]="{ watch: checkWatch(movie) }"
+          >
+            Add to Watchlist
+          </button>
           <button class="exit" (click)="removeShowInfo()">Exit</button>
         </div>
-        
-
       </div>
     </div>
-
   </div>
 </div>
-
-
-
-    

@@ -1,15 +1,142 @@
 .container {
     background-color: #0d253f;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+     margin-top: 0;
+}
+
+.watchlist {
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding-top: 25px;
+    justify-content: space-around;
 }
 
 img {
     width: 200px;
+    padding: 20px;
+    border-radius: 35px;
+    padding-bottom: 0px;
+    margin-bottom: -23px;
 }
 
-.trash {
+.popup-container {
+    height: 700px;
+    width: 1000px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.popup {
+    background-color: #041c45;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    border: 5px solid #08e8de;
+    padding: 10px;
+    border-radius: 25px;
+    justify-content: space-around;
+}
+
+/* .trash {
     color: grey;
     border: none;
     
+} */
+
+.page-header  {
+    color: #D01698;
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    letter-spacing: 4px;
 }
+
+.nothing {
+    color: #D01698;
+    font-family: 'Montserrat', sans-serif; 
+    text-align: center;
+}
+
+button {
+    background-color:#08e8de;
+    border-radius: 5px;
+    /* margin: 0; */
+    color: #444444;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px;
+    /* width: 250px; */
+  }
+
+button:hover {
+    box-shadow: 2px 2px 7px 5px #d4e026;
+    background-color: #444444;
+    color: #08e8de;
+    border: 3px dotted;
+    font-weight: bolder;
+    cursor: pointer;
+    
+  }
+
+  .trash {
+    color: #444444;
+    background-color: #01b4e4;
+    border-radius: 5px;
+    background-color: #08e8de;
+    cursor: pointer;
+    border: 1px;
+    padding: 5px;
+    
+}
+
+.more-info{
+    background-color:#08e8de;
+    border-radius: 5px;
+    margin: 0;
+    color: #444444;
+  }
+
+.imgInfo{
+    display:flex;
+    justify-content: space-around;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .popup-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    font-weight: bolder;
+    color: #D01698;
+    font-family: 'Montserrat', sans-serif; 
+  }
+
+  .infoBtn {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 450px;  
+  }
+
+  .btnInfo{
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 250px;
+  }
+
+
+
