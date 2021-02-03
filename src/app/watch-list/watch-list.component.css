@@ -1,8 +1,8 @@
 .container {
-    background-color: #0d253f;
+    /* background-color: #0d253f; */
     display: flex;
     flex-wrap: wrap;
-     margin-top: 0;
+    margin-top: 0;
 }
 
 .watchlist {
@@ -21,11 +21,13 @@ img {
 }
 
 .popup-container {
-    height: 700px;
-    width: 1000px;
+    /* height: 700px;
+    width: 1000px; */
     position: fixed;
     top: 0;
     left: 0;
+    width: auto;
+    height: 600px;
     display: flex;
     justify-content: center;
 }
@@ -36,19 +38,13 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 500px;
-    height: 500px;
+    /* width: 500px;
+    height: 500px; */
     border: 5px solid #08e8de;
     padding: 10px;
     border-radius: 25px;
     justify-content: space-around;
 }
-
-/* .trash {
-    color: grey;
-    border: none;
-    
-} */
 
 .page-header  {
     color: #D01698;
@@ -94,7 +90,11 @@ button:hover {
     cursor: pointer;
     border: 1px;
     padding: 5px;
-    
+    margin: 30px;
+}
+
+.exit {
+  margin: 30px;
 }
 
 .more-info{
@@ -139,4 +139,30 @@ button:hover {
   }
 
 
+@media only screen and (min-width: 768px) {
 
+  .popup-container {
+    height: 700px;
+    width: 1000px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.popup {
+    background-color: #041c45;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    border: 5px solid #08e8de;
+    padding: 10px;
+    border-radius: 25px;
+    justify-content: space-around;
+}
+
+}

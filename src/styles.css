@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 html, body {
-    height: 100%;
-  }
+  min-height: 100%;
+}
 
 body {
-
     margin: 0;
-    background-color: #0d253f;
+    /* background: rgb(4,28,69); */
+    background-image: linear-gradient(to right, #3813e5, #3723e4, #362fe4, #3738e2, #3940e1, #2359ee, #066ef8, #0082ff, #00a5ff, #00c2ff, #00dbf7, #2df1e4); 
     display:flex;
     flex-direction: column;
+    /* height: 100vh; */
 }
