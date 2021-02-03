@@ -1,13 +1,21 @@
 .form-container {
-    background-color: #041c45;
+    /* background-color: #041c45; */
     display: flex;
     justify-content: center;
-    /* width: 50%;
-    height: 75vh; */
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleForm {
+    /* background-color: #041c45; */
+    display: flex;
+    justify-content: center;
     margin: auto;
     flex-direction: column;
     text-align: center;
-}
+    align-items: center;
+} 
 
 input, select  {
     height: 25px;
@@ -30,9 +38,10 @@ button {
 
 label {
     margin-left: 25px;
-    color:   #8A8A8A;
+    color:   #444444;
     margin-right: 5px;
     font-family: 'Montserrat', sans-serif;
+    
 }
 
 h1, h2 {
@@ -41,4 +50,35 @@ h1, h2 {
     letter-spacing: 4px;
 }
 
+@media only screen and (min-width: 768px) {
 
+    .form-container {
+        /* background-color: #041c45; */
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        flex-direction: row;
+        text-align: center; 
+    }
+
+    .titleForm {
+        /* background-color: #041c45; */
+        display: flex;
+        justify-content: center;
+        /* margin: auto; */
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    h1 {
+        margin-left: 30px;
+    }
+
+    h2 {
+        display: flex;
+        padding-left: 35px;
+    }
+}

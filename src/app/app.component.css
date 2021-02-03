@@ -1,10 +1,8 @@
 header {
-    background-color: #01b4e4;
+    /* background-color: #01b4e4; */
     height: 100px;
     display: flex;
     justify-content: space-between;
-   
-
 }
 
 .content {
@@ -34,7 +32,8 @@ footer {
 h1 {
     font-family: 'Bangers', cursive;
     letter-spacing: 4px;
-    color: #D01698;
+    margin-left: 30px;
+    font-size: 40px;
 }
 
 nav    {
@@ -53,6 +52,14 @@ nav    {
 
 a {
     text-decoration: none;
+}
+
+.logo {
+    color: #2df1e4;
+}
+
+.myWatchList {
+    color: #3813e5;
 }
 
 

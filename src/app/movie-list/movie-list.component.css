@@ -1,6 +1,6 @@
-.movies-wrapper {
+/* .movies-wrapper {
   background-color: #041c45;
-}
+} */
 .single-movie {
   color: #D01698;
   font-family: 'Montserrat', sans-serif; 
@@ -12,9 +12,6 @@
   padding-left: 25px;
 }
 
-
-
-
 .popup-info {
   /* background-color:rgba(255, 255, 255, .4); */
   display: flex;
@@ -25,22 +22,35 @@
 }
 
 .popup-container {
-  height: 700px;
-  width: 1000px;
+  /* height: 700px;
+  width: 1000px; */
   position: fixed;
   top: 0;
   left: 0;
+  width: auto;
+  height: 600px;
   display: flex;
   justify-content: center;
 }
 
 .popup {
-  background-color: red;
+  background-color: #041c45;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 5px solid #08e8de;
+  padding: 10px;
+  border-radius: 25px;
+  justify-content: space-around;
+}
+
+.add-in-popup {
+  color: #444444;
+  background-color: #01b4e4;
+  border-radius: 5px;
+  background-color: #08e8de;
+  cursor: pointer;
 }
 
 .add-movie {
@@ -60,8 +70,13 @@
   cursor: pointer;
 }
 
-
-
+.exit{
+  color: #444444;
+  background-color: #01b4e4;
+  border-radius: 5px;
+  background-color: #08e8de;
+  cursor: pointer;
+}
 .exit:hover, .add:hover, .add-in-popup:hover {
   box-shadow: 2px 2px 7px 5px #d4e026;
   background-color: #444444;
@@ -71,6 +86,8 @@
   cursor: pointer;
 }
 
+
+
 @media only screen and (min-width: 768px) {
   .movies-wrapper {
     flex-wrap: wrap;
@@ -78,34 +95,10 @@
     padding-top: 25px;
     justify-content: space-around;
   }
-  .exit{
-    color: #444444;
-    background-color: #01b4e4;
-    border-radius: 5px;
-    background-color: #08e8de;
-    cursor: pointer;
-  }
-
-  .add-in-popup {
-    color: #444444;
-    background-color: #01b4e4;
-    border-radius: 5px;
-    background-color: #08e8de;
-    cursor: pointer;
-  }
   
   .popup {
-    background-color: #041c45;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 500px;
     height: 500px;
-    border: 5px solid #08e8de;
-    padding: 10px;
-    border-radius: 25px;
-    justify-content: space-around;
   }
 
 
@@ -178,5 +171,4 @@ img {
   justify-content: space-between;
   width: 450px;
 }
-
 
