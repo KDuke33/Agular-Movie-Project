@@ -28,7 +28,8 @@
   top: 0;
   left: 0;
   width: auto;
-  height: 600px;
+  /* height: 600px; */
+  height: auto;
   display: flex;
   justify-content: center;
 }
@@ -98,7 +99,7 @@
   
   .popup {
     width: 500px;
-    height: 500px;
+    /* height: 500px; */
   }
 
 
